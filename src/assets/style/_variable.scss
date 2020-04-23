@@ -1,0 +1,58 @@
+// susy
+$columns: 24;
+$susy: (
+  'columns': susy-repeat($columns),
+  'gutters': 20px,
+  'debug': false,
+  'container-spread': 'wide',
+  'svg-grid-colors': hsla(180, 40%, 60%, .5)
+);
+
+// breakpoints
+$devices: (
+  desktopHD: 1200px,
+  desktop: 960px,
+  tablet: 768px,
+  mobile: 480px
+);
+$desktopHD: map-get($devices, desktopHD);
+$desktop: map-get($devices, desktop);
+$tablet: map-get($devices, tablet);
+$mobile: map-get($devices, mobile);
+$breakpoint: (
+  xl:
+  map-merge(
+    $susy,
+    (
+      'max-width': $desktopHD
+    )
+  ),
+  lg:
+  map-merge(
+    $susy,
+    (
+      'max-width': $desktop
+    )
+  ),
+  md:
+  map-merge(
+    $susy,
+    (
+      'max-width': $tablet
+    )
+  ),
+  sm:
+  map-merge(
+    $susy,
+    (
+      'max-width': $mobile
+    )
+  )
+);
+
+// colors
+$white: #ffffff;
+$black: #000000;
+
+$mainWidth: 1200px;
+$lightLevel: 10%;
