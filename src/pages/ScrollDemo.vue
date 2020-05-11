@@ -18,6 +18,7 @@
           draggable="false"
           :href="!isMove ? 'https://google.com.tw' : '#'"
           class="content"
+          target="name"
         >
           <figure />
           <figcaption>{{ item.name }}</figcaption>
@@ -109,6 +110,9 @@ export default {
   margin: 0 auto;
   width: 100%;
   max-width: 900px;
+  .scroller {
+    margin-bottom: 50px;
+  }
   .card {
     padding: 0 5px;
     width: 100%;

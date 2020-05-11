@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Index from '../pages/Index.vue'
 import ScrollDemo from '../pages/ScrollDemo.vue'
-import ScrollNav from '../pages/ScrollNav.vue'
 
 Vue.use(VueRouter)
 
@@ -16,11 +15,6 @@ const routes = [
     path: '/scrollDemo.html',
     name: 'ScrollDemo',
     component: ScrollDemo
-  },
-  {
-    path: '/scrollNav.html',
-    name: 'ScrollNav',
-    component: ScrollNav
   },
   {
     path: '*',

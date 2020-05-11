@@ -80,6 +80,12 @@ export default {
   text-align: center;
 }
 
+h1 {
+  margin-bottom: 20px;
+  font-size: 40px;
+  line-height: 46px;
+}
+
 h2 {
   margin-bottom: 30px;
   font-size: 30px;

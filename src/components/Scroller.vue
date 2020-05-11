@@ -119,16 +119,18 @@ export default {
       if (touchMoveing.value === true) touchend()
     }
     const stopTimer = () => {
+      status.value = false
       clearInterval(timer.value)
       timer.value = ''
     }
-    // 按下滑鼠按鈕
+    // 按下
     const touchstart = e => {
+      stopTimer()
       touchMoveing.value = true
       touchstartTime.value = new Date().getTime()
       e.x ? touchStartX.value = e.x : touchStartX.value = e.targetTouches[0].pageX
     }
-    // 按住滑鼠按鈕移動
+    // 按住移動
     const touching = e => {
       if (touchMoveing.value) {
         // movingDistance判斷移動距離
@@ -136,11 +138,17 @@ export default {
         distance.value = movingDistance / context.refs.scrollerWidth.clientWidth * 100
       }
     }
-    // 放開滑鼠按鈕
+    // 放開
     const touchend = () => {
       touchMoveing.value = false
       touchendTime.value = new Date().getTime()
-      touchendTime.value - touchstartTime.value > 300 ? isMove.value = true : isMove.value = false
+      // 判斷是移動還是點連結
+      if (touchendTime.value - touchstartTime.value > 100) {
+        isMove.value = true
+      } else {
+        isMove.value = false
+        setTimer()
+      }
       context.emit('emitIsMove', isMove.value)
       // 判斷向前還向後
       if (handMove.value > (firstPos.value + movePos.value)) {
@@ -155,6 +163,9 @@ export default {
     onMounted(() => {
       setTimer()
     })
+    // onBeforeUnmount(() => {
+    //   setTimer()
+    // })
     return {
       now,
       time,

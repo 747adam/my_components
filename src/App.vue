@@ -6,9 +6,6 @@
       </router-link> |
       <router-link to="/scrollDemo.html">
         大圖輪播
-      </router-link> |
-      <router-link to="/scrollNav.html">
-        錨點選單
       </router-link>
     </div>
     <router-view />
