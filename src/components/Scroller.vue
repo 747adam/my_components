@@ -163,9 +163,6 @@ export default {
     onMounted(() => {
       setTimer()
     })
-    // onBeforeUnmount(() => {
-    //   setTimer()
-    // })
     return {
       now,
       time,
