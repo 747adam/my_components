@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Index from '../pages/Index.vue'
 import ScrollDemo from '../pages/ScrollDemo.vue'
+import StuScroll from '../pages/StuScroll.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/scrollDemo.html',
     name: 'ScrollDemo',
     component: ScrollDemo
+  },
+  {
+    path: '/stuScroll.html',
+    name: 'StuScroll',
+    component: StuScroll
   },
   {
     path: '*',

@@ -6,6 +6,9 @@
       </router-link> |
       <router-link to="/scrollDemo.html">
         大圖輪播
+      </router-link> |
+      <router-link to="/stuScroll.html">
+        學生專區職業卡
       </router-link>
     </div>
     <router-view />
